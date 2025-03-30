@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamado TI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Menu lateral -->
+        <aside class="sidebar">
+            <h2>Menu</h2>
+            <button onclick="mostrarFormulario()">Abrir Chamado</button>
+            <button onclick="mostrarChamados()">Meus Chamados</button>
+            <button onclick="toggleDarkMode()">Modo Claro/Escuro</button>
+        </aside>
+
+        <!-- Área principal -->
+        <main class="content">
+            <section id="formularioChamado">
+                <h1>Abertura de Chamado</h1>
+                <form id="formChamado">
+                    <label for="setor">Setor:</label>
+                    <select id="setor">
+                        <option value="Secretaria">Secretaria</option>
+                        <option value="Diretoria">Diretoria</option>
+                        <option value="Laboratório">Laboratório</option>
+                        <option value="Auditório">Auditório</option>
+                        <option value="Sala">Sala</option>
+                    </select>
+
+                    <label for="sala">Número da Sala (se aplicável):</label>
+                    <input type="text" id="sala" placeholder="Ex: 101">
+
+                    <label for="descricao">Descrição do Problema:</label>
+                    <textarea id="descricao" placeholder="Descreva o problema"></textarea>
+
+                    <button type="button" onclick="abrirChamado()">Abrir Chamado</button>
+                </form>
+            </section>
+
+            <section id="meusChamados" style="display: none;">
+                <h2>Meus Chamados</h2>
+                <ul id="listaChamados"></ul>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
